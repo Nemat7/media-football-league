@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="vievport" content="width=device-width, initial-scale=1.0">
+    <title>COntact Form To Email Using Javascript</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="style2.css">
+    <script src=test.js></script>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="navbar-right">
+            <svg width="380" height="104" viewBox="0 0 380 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M48.2979 99.1568L128.776 1.07937C129.341 0.391671 130.236 0.14357 131.076 0.441646C131.916 0.740163 132.451 1.49597 132.451 2.384V41.2974C132.451 41.7927 132.298 42.2182 131.984 42.6016L83.4361 101.766C83.0292 102.262 82.4758 102.523 81.8321 102.523H49.9019C49.0824 102.523 48.3814 102.082 48.0305 101.345C47.6791 100.608 47.7795 99.7887 48.2979 99.1568Z"
+                    fill="#2B2B2A" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M96.1212 99.1564L128.776 59.3607C129.34 58.673 130.235 58.4244 131.076 58.723C131.916 59.021 132.451 59.7773 132.451 60.6649L132.455 100.461C132.455 101.597 131.525 102.523 130.384 102.523L97.7252 102.523C96.9056 102.523 96.2047 102.081 95.8538 101.345C95.5028 100.608 95.6032 99.7884 96.1212 99.1564Z"
+                    fill="#2B2B2A" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M0.473864 99.1564L81.1909 0.788882C81.5978 0.29268 82.1512 0.031311 82.7949 0.031311H114.725C115.544 0.031311 116.245 0.473117 116.597 1.20946C116.947 1.94625 116.847 2.76617 116.329 3.39771L35.6125 101.766C35.2057 102.261 34.6517 102.523 34.0085 102.523H2.07788C1.25877 102.523 0.557818 102.081 0.206898 101.345C-0.144467 100.608 -0.0440767 99.7884 0.473864 99.1564Z"
+                    fill="#2B2B2A" />
+                <path
+                    d="M159.652 30.7756V11.4927L167.131 30.7756H170.07L177.636 11.4927V30.7756H186.456V0L175.129 0L169.206 16.3566L163.283 0L151.74 0V30.7756H159.652ZM214.515 30.7756V23.9752H201.285V18.3794H211.272V12.095H201.285V6.758H213.823V0L192.466 0V30.7756H214.515ZM230.122 30.7756C235.526 30.7756 239.677 29.3985 242.487 26.6437C245.297 23.8889 246.723 20.144 246.723 15.3664V15.0223C246.723 5.50953 241.103 0 230.165 0L218.925 0V30.7756H230.122ZM227.831 6.758H229.776C235.137 6.758 237.471 9.34028 237.471 15.1514V15.4955C237.471 21.1771 235.094 23.9752 229.862 23.9752H227.831V6.758ZM260.169 30.7756V0L251.22 0V30.7756H260.169ZM272.102 30.7756L273.744 25.0512H283.991L285.633 30.7756H295.015L285.201 0L273.744 0L263.844 30.7756H272.102ZM282.261 18.9817H275.473L278.889 7.14496L282.261 18.9817ZM160.646 67.1298V56.2398H170.2V49.7401H160.646V43.1546H172.621V36.3537H151.74V67.1298H160.646ZM190.909 67.6463C200.896 67.6463 207.424 61.1899 207.424 51.7201V51.376C207.424 41.8632 200.464 35.9234 191.039 35.9234C181.787 35.9234 174.697 42.2506 174.697 51.5914V51.9354C174.697 61.1466 180.922 67.6463 190.909 67.6463ZM191.082 60.7163C186.802 60.7163 183.949 57.445 183.949 51.8921V51.548C183.949 45.9956 186.716 42.8101 191.039 42.8101C195.362 42.8101 198.172 46.0385 198.172 51.5051V51.8492C198.172 57.3587 195.405 60.7163 191.082 60.7163ZM226.317 67.6463C236.305 67.6463 242.833 61.1899 242.833 51.7201V51.376C242.833 41.8632 235.872 35.9234 226.447 35.9234C217.195 35.9234 210.105 42.2506 210.105 51.5914V51.9354C210.105 61.1466 216.331 67.6463 226.317 67.6463ZM226.49 60.7163C222.21 60.7163 219.357 57.445 219.357 51.8921V51.548C219.357 45.9956 222.124 42.8101 226.447 42.8101C230.771 42.8101 233.581 46.0385 233.581 51.5051V51.8492C233.581 57.3587 230.814 60.7163 226.49 60.7163ZM260.99 67.1298V43.1546H268.989V36.3537H244.086V43.1546H252.084V67.1298H260.99ZM286.844 67.1298C294.453 67.1298 298.085 64.0738 298.085 58.5638V58.3918C298.085 54.1307 295.707 51.8492 291.902 51.2035C295.361 50.3 297.134 48.0184 297.134 44.5751V44.4031C297.134 39.625 293.977 36.3537 286.714 36.3537H272.923V67.1298H286.844ZM281.57 42.2077H284.942C287.579 42.2077 288.789 43.1546 288.789 45.2637V45.4357C288.789 47.631 287.709 48.5783 284.942 48.5783H281.57V42.2077ZM281.57 53.9587H284.985C288.098 53.9587 289.352 55.2067 289.352 57.4879V57.6603C289.352 59.9415 288.055 61.2328 285.245 61.2328H281.57V53.9587ZM307.726 67.1298L309.369 61.4048H319.615L321.258 67.1298H330.64L320.825 36.3537H309.369L299.468 67.1298H307.726ZM317.886 55.3359H311.098L314.513 43.4987L317.886 55.3359ZM354.764 67.1298V60.3289H343.091V36.3537H334.185V67.1298H354.764ZM379.623 67.1298V60.3289H367.95V36.3537H359.044V67.1298H379.623ZM172.319 103.483V96.6825H160.646V72.7078H151.74V103.483H172.319ZM198.648 103.483V96.6825H185.418V91.0872H195.405V84.8024H185.418V79.4654H197.956V72.7078H176.599V103.483H198.648ZM208.894 103.483L210.537 97.759H220.784L222.426 103.483H231.808L221.994 72.7078H210.537L200.636 103.483H208.894ZM219.054 91.6896H212.267L215.682 79.8528L219.054 91.6896ZM248.366 104C258.353 104 263.498 98.0602 263.498 90.2691V86.5246H248.971V92.5502H254.808C254.678 93.7986 254.159 94.8746 253.251 95.8648C252.343 96.8117 250.787 97.2849 248.625 97.2849C243.264 97.2849 241.405 93.4112 241.405 88.4183V88.0742C241.405 82.5647 244.086 79.1642 248.41 79.1642C251.695 79.1642 253.597 80.6705 253.986 83.5544H262.763C262.201 75.5484 255.672 72.2342 248.366 72.2342C239.114 72.2342 232.153 78.6048 232.153 87.9451V88.2891C232.153 97.5003 237.86 104 248.366 104ZM281.31 104C289.783 104 295.058 99.7818 295.058 90.8718V72.7078H286.152V90.4844C286.152 95.09 284.942 97.07 281.31 97.07C277.549 97.07 276.468 94.9175 276.468 90.6136V72.7078H267.605V91.001C267.605 99.5665 272.62 104 281.31 104ZM322.901 103.483V96.6825H309.671V91.0872H319.658V84.8024H309.671V79.4654H322.209V72.7078H300.852V103.483H322.901Z"
+                    fill="#2B2B2A" />
+            </svg>
+        </div>
+    </div>
+    <div class="container">
+        <div class="wrapper">
+
+
+            <form action="https://formspree.io/f/xzbqnpvb" method="POST">
+
+                <h3>Оставьте заявку</h3>
+
+                <input type="email" name="mediateam" placeholder="Media Team" required>
+                <input type="text" name="phone" placeholder="Телефон" required>
+                <input type="text" name="instagram" placeholder="Instagram Teams" required>
+                <!--  <input type="text" id="name" placeholder="Ваше Имя" required>
+                <input type="email" id="email" placeholder="Email id" required>
+                <input type="text" id="phone" placeholder="Номер телефона" required>
+                <textarea id="message" rows="4" placeholder="Как мы можем Вам помочь?"></textarea> -->
+                <!-- <tr>
+                    <td><label >FirtsName</label></td>
+                    <td><input type="text" name="name" value="Name:Gani Toshtemurov"></td>
+                   </tr>
+                 <tr>
+                  <td><label >LastName</label></td>
+                  <td><input type="text" name="name" value="Number:1"></td>
+                  </tr> -->
+                <h3>Тренер команды </h3>
+                <input type="text" name="captain-1" placeholder="Фамилия, Имя, Отчество" required>
+                <input type="text" name="captain-1" placeholder="Должность" required>
+                <input type="text" name="captain-1" placeholder="Дата рождения" required>
+                <input type="text" name="captain-1" placeholder="Телефон" required>
+                <h3>Менеджер команды </h3>
+                <input type="text" name="captain-2" placeholder="Фамилия, Имя, Отчество" required>
+                <input type="text" name="captain-2" placeholder="Должность" required>
+                <input type="text" name="captain-2" placeholder="Дата рождения" required>
+                <input type="text" name="captain-2" placeholder="Телефон" required>
+                <!-- <div id="captains">
+            </div> -->
+
+
+
+                <h3>Игроки </h3>
+                <table>
+
+                    <tr>
+                        <th>ФИО/Nikname</th>
+                        <th>Номер на майке</th>
+                        <th>Instagram</th>
+                        <th>Facebook</th>
+                        <th>Youtube</th>
+                        <th>Tiktok</th>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" name="player-1" placeholder="Имя"></td>
+
+                        <td> <input type="text" name="player-1" placeholder="Номер"></td>
+                        <td> <input type="text" name="player-1" placeholder="Instagram"></td>
+                        <td> <input type="text" name="player-1" placeholder="Facebook"></td>
+                        <td> <input type="text" name="player-1" placeholder="Youtube"></td>
+                        <td> <input type="text" name="player-1" placeholder="Tiktok"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" name="player-2" placeholder="Имя"></td>
+
+                        <td> <input type="text" name="player-2" placeholder="Номер"></td>
+                        <td> <input type="text" name="player-2" placeholder="Instagram"></td>
+                        <td> <input type="text" name="player-2" placeholder="Facebook"></td>
+                        <td> <input type="text" name="player-2" placeholder="Youtube"></td>
+                        <td> <input type="text" name="player-2" placeholder="Tiktok"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" name="player-3" placeholder="Имя"></td>
+
+                        <td> <input type="text" name="player-3" placeholder="Номер"></td>
+                        <td> <input type="text" name="player-3" placeholder="Instagram"></td>
+                        <td> <input type="text" name="player-3" placeholder="Facebook"></td>
+                        <td> <input type="text" name="player-3" placeholder="Youtube"></td>
+                        <td> <input type="text" name="player-3" placeholder="Tiktok"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" name="player-4" placeholder="Имя"></td>
+
+                        <td> <input type="text" name="player-4" placeholder="Номер"></td>
+                        <td> <input type="text" name="player-4" placeholder="Instagram"></td>
+                        <td> <input type="text" name="player-4" placeholder="Facebook"></td>
+                        <td> <input type="text" name="player-4" placeholder="Youtube"></td>
+                        <td> <input type="text" name="player-4" placeholder="Tiktok"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" name="player-5" placeholder="Имя"></td>
+
+                        <td> <input type="text" name="player-5" placeholder="Номер"></td>
+                        <td> <input type="text" name="player-5" placeholder="Instagram"></td>
+                        <td> <input type="text" name="player-5" placeholder="Facebook"></td>
+                        <td> <input type="text" name="player-5" placeholder="Youtube"></td>
+                        <td> <input type="text" name="player-5" placeholder="Tiktok"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" name="player-6" placeholder="Имя"></td>
+
+                        <td> <input type="text" name="player-6" placeholder="Номер"></td>
+                        <td> <input type="text" name="player-6" placeholder="Instagram"></td>
+                        <td> <input type="text" name="player-6" placeholder="Facebook"></td>
+                        <td> <input type="text" name="player-6" placeholder="Youtube"></td>
+                        <td> <input type="text" name="player-6" placeholder="Tiktok"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" name="player-7" placeholder="Имя"></td>
+
+                        <td> <input type="text" name="player-7" placeholder="Номер"></td>
+                        <td> <input type="text" name="player-7" placeholder="Instagram"></td>
+                        <td> <input type="text" name="player-7" placeholder="Facebook"></td>
+                        <td> <input type="text" name="player-7" placeholder="Youtube"></td>
+                        <td> <input type="text" name="player-7" placeholder="Tiktok"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" name="player-8" placeholder="Имя"></td>
+
+                        <td> <input type="text" name="player-8" placeholder="Номер"></td>
+                        <td> <input type="text" name="player-8" placeholder="Instagram"></td>
+                        <td> <input type="text" name="player-8" placeholder="Facebook"></td>
+                        <td> <input type="text" name="player-8" placeholder="Youtube"></td>
+                        <td> <input type="text" name="player-8" placeholder="Tiktok"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" name="player-9" placeholder="Имя"></td>
+
+                        <td> <input type="text" name="player-9" placeholder="Номер"></td>
+                        <td> <input type="text" name="player-9" placeholder="Instagram"></td>
+                        <td> <input type="text" name="player-9" placeholder="Facebook"></td>
+                        <td> <input type="text" name="player-9" placeholder="Youtube"></td>
+                        <td> <input type="text" name="player-9" placeholder="Tiktok"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" name="player-10" placeholder="Имя"></td>
+
+                        <td> <input type="text" name="player-10" placeholder="Номер"></td>
+                        <td> <input type="text" name="player-10" placeholder="Instagram"></td>
+                        <td> <input type="text" name="player-10" placeholder="Facebook"></td>
+                        <td> <input type="text" name="player-10" placeholder="Youtube"></td>
+                        <td> <input type="text" name="player-10" placeholder="Tiktok"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" name="player-11" placeholder="Имя"></td>
+
+                        <td> <input type="text" name="player-11" placeholder="Номер"></td>
+                        <td> <input type="text" name="player-11" placeholder="Instagram"></td>
+                        <td> <input type="text" name="player-11" placeholder="Facebook"></td>
+                        <td> <input type="text" name="player-11" placeholder="Youtube"></td>
+                        <td> <input type="text" name="player-11" placeholder="Tiktok"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" name="player-12" placeholder="Имя"></td>
+
+                        <td> <input type="text" name="player-12" placeholder="Номер"></td>
+                        <td> <input type="text" name="player-12" placeholder="Instagram"></td>
+                        <td> <input type="text" name="player-12" placeholder="Facebook"></td>
+                        <td> <input type="text" name="player-12" placeholder="Youtube"></td>
+                        <td> <input type="text" name="player-12" placeholder="Tiktok"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" name="player-13" placeholder="Имя"></td>
+
+                        <td> <input type="text" name="player-13" placeholder="Номер"></td>
+                        <td> <input type="text" name="player-13" placeholder="Instagram"></td>
+                        <td> <input type="text" name="player-13" placeholder="Facebook"></td>
+                        <td> <input type="text" name="player-13" placeholder="Youtube"></td>
+                        <td> <input type="text" name="player-13" placeholder="Tiktok"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" name="player-14" placeholder="Имя"></td>
+
+                        <td> <input type="text" name="player-14" placeholder="Номер"></td>
+                        <td> <input type="text" name="player-14" placeholder="Instagram"></td>
+                        <td> <input type="text" name="player-14" placeholder="Facebook"></td>
+                        <td> <input type="text" name="player-14" placeholder="Youtube"></td>
+                        <td> <input type="text" name="player-14" placeholder="Tiktok"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" name="player-15" placeholder="Имя"></td>
+
+                        <td> <input type="text" name="player-15" placeholder="Номер"></td>
+                        <td> <input type="text" name="player-15" placeholder="Instagram"></td>
+                        <td> <input type="text" name="player-15" placeholder="Facebook"></td>
+                        <td> <input type="text" name="player-15" placeholder="Youtube"></td>
+                        <td> <input type="text" name="player-15" placeholder="Tiktok"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="text" name="player-16" placeholder="Имя"></td>
+
+                        <td> <input type="text" name="player-16" placeholder="Номер"></td>
+                        <td> <input type="text" name="player-16" placeholder="Instagram"></td>
+                        <td> <input type="text" name="player-16" placeholder="Facebook"></td>
+                        <td> <input type="text" name="player-16" placeholder="Youtube"></td>
+                        <td> <input type="text" name="player-16" placeholder="Tiktok"></td>
+                    </tr>
+
+                </table>
+                <button type="submit">Отправить заявку</button>
+
+                <!-- <button type="submit" onclick="handeClick()">Отправить заявку</button> -->
+
+            </form>
+        </div>
+    </div>
+
+
+    <!--  <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+            function sendEmail(){
+                Email.send({
+                Host : "smtp.gmail.com",
+                Username : "nematrahmatov24@gmail.com",
+                Password : "80899970f0",
+                To : 'dilshod.alizadeh@gmail.com',
+                From : document.getElementById("email").value,
+                Subject : "Новая заявка",
+                Body : "And this is the body"
+            }).then(
+            message => alert(message)
+            );
+            }
+        </script> -->
+    <script>
+        jQuery('#captains').tabularInput({
+            'rows': 2,
+            'columns': 4,
+            'columnHeads': ["Имя", "Должность", "Дата рождения", "Телефон",]
+
+        });
+        jQuery('#players').tabularInput({
+            'rows': 16,
+            'columns': 6,
+            'columnHeads': ["Name", "Number", "Instagram", "Facebook", "Tiktok", "Youtube"]
+
+        });
+    </script>
+
+</body>
+
+</html>
